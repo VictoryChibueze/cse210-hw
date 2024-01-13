@@ -14,7 +14,7 @@ class Program
         float sum = 0;
         float average = 0;
 
-        // intialization of the list data structure
+        // intialization of the list data structure 
         List<float> enteredNumberList = new List<float> ();
 
         // initializing the list count variable
