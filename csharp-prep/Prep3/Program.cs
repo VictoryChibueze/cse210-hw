@@ -7,7 +7,7 @@ class Program
         
         Random randomGenerator = new Random();
 
-        int magicNumberInt = randomGenerator.Next(1,100);
+        int magicNumberInt = randomGenerator.Next(1,101);
         
         string starter = "on";
 
@@ -34,7 +34,7 @@ class Program
                 Console.WriteLine($"You made {counter} attempts before making the right guess...");
                 starter = "off";
             }
-            
+
         }
 
         
