@@ -6,50 +6,50 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Displaying a welcome instruction to the user
-        Console.WriteLine("Enter a list of numbers, type 0 when finished");
+        List<int> numbers = new List<int>();
         
-        string keepTheLoop = "yes";
-        // Initializing the sum and average variable
-        float sum = 0;
-        float average = 0;
-
-        // intialization of the list data structure 
-        List<float> enteredNumberList = new List<float> ();
-
-        // initializing the list count variable
-        int listCount = 0;
-
-        // loop for prompting the user to enter numbers until zero is entered to exist the loop
-        while(keepTheLoop =="yes")
+        // Please note we could use a do-while loop here instead
+        int userNumber = -1;
+        while (userNumber != 0)
         {
+            Console.Write("Enter a number (0 to quit): ");
             
-            Console.Write("Enter number: ");
-            string enteredNumber = Console.ReadLine();
-
-            float enteredNumberFloat = float.Parse(enteredNumber);
-            enteredNumberList.Add(enteredNumberFloat);
-            if (enteredNumberFloat == 0)
+            string userResponse = Console.ReadLine();
+            userNumber = int.Parse(userResponse);
+            
+            // Only add the number to the list if  number is not 0
+            if (userNumber != 0)
             {
-                keepTheLoop = "no"; 
+                numbers.Add(userNumber);
             }
-            
         }
-        // foreach loop to iterate the list and make up the sum of the elements in the list
-        foreach (float enteredNumber in enteredNumberList )
-        {
-            sum = sum + enteredNumber;
-            listCount ++;
 
+        // Part 1: Compute the sum
+        int sum = 0;
+        foreach (int number in numbers)
+        {
+            sum += number;
         }
-        
-        // storing the count in a list count variable
-        listCount = enteredNumberList.Count;
-        // computing the average
-        average = sum/(listCount-1);
-        // Displaying the sum and average of the entered numbers
-        Console.WriteLine($"The sum is {sum}");
-        Console.WriteLine($"The average is {average}");
-    
+
+        Console.WriteLine($"The sum is: {sum}");
+
+        float average = ((float)sum) / numbers.Count;
+        Console.WriteLine($"The average is: {average}");
+
+        // computing the max of the list
+        int max = numbers[0];
+
+        foreach (int number in numbers)
+        {
+            if (number > max)
+            {
+                // if this number is greater than the max, we have found the new max!
+                max = number;
+            }
+        }
+
+        Console.WriteLine($"The max is: {max}");
+       
+
     }
 }
