@@ -19,17 +19,17 @@ class Program
         job2._startYear = 2019;
         job2._endYear = 2020;
 
-        Console.WriteLine(job1._company);
-        Console.WriteLine(job2._company);
-        
-        Console.WriteLine("");
 
-        job1.DisplayJobDetail();
-        job2.DisplayJobDetail();
+        Resume myResume = new Resume();
+        myResume.personName = "Victory Chibueze";
 
-        Resume resume1 = new Resume();
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
 
-        
+        myResume.Display();
+
+       
+
 
 
     }
