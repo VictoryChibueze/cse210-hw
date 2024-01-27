@@ -4,8 +4,17 @@ public class Entry
     public string _promptText;
     public string _entryText;
 
-    public void Display()
+    
+
+      public void Display()
     {
-         
+        Console.WriteLine(_promptText);
+        Console.Write("> ");
+        _entryText = Console.ReadLine();
+
+        DateTime date = DateTime.Now;
+        _date = date.ToShortDateString();
     }
 }
+
+
