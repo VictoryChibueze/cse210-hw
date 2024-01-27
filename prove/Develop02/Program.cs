@@ -11,11 +11,13 @@ class Program
         PromptGenerator promptGenerator1 = new PromptGenerator();
             
         Journal theJournal = new Journal();
-        
-        Entry entry = new Entry();
+       
 
         do
         {
+             
+            Entry entry = new Entry();
+            
             Console.WriteLine("Please select one of the following choices");
             Console.WriteLine("1.Write");
             Console.WriteLine("2.Display");
@@ -43,7 +45,9 @@ class Program
                 
             }else if(userResponseInt == 4)
             {
-                Console.WriteLine("4");
+                Console.Write("filename: ");
+                string file = Console.ReadLine();
+                theJournal.SaveToFile(file);
             }else if(userResponseInt == 5)
             {
                 keepLooping = false;
