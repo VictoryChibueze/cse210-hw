@@ -17,7 +17,7 @@ class Program
         {
              
             Entry entry = new Entry();
-            
+
             Console.WriteLine("Please select one of the following choices");
             Console.WriteLine("1.Write");
             Console.WriteLine("2.Display");
@@ -32,6 +32,8 @@ class Program
             if (userResponseInt == 1)
             {
                 entry._promptText = promptGenerator1.GetRandomPrompt();
+                entry.Mood();
+
                 entry.Display();
                 theJournal.AddEntry(entry);
                 
@@ -41,7 +43,9 @@ class Program
                 
             }else if (userResponseInt == 3)
             {
-                Console.WriteLine("Load");
+                Console.Write("filename: ");
+                string file = Console.ReadLine();
+                theJournal.LoadFromFile(file);
                 
             }else if(userResponseInt == 4)
             {
@@ -51,6 +55,18 @@ class Program
             }else if(userResponseInt == 5)
             {
                 keepLooping = false;
+                Console.WriteLine("Keep having a great day...Thanks for documenting your experience");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Entry");
+                Console.WriteLine("");
+                Console.WriteLine("Select '1' to Write");
+                Console.WriteLine("Select '2' to Display");
+                Console.WriteLine("Select '3' to Load");
+                Console.WriteLine("Select '4' to Save");
+                Console.WriteLine("Select '5' to Quit");
+
             }
 
             
@@ -59,3 +75,7 @@ class Program
         
     }
 }
+
+// Exceeding requirement
+// I added a mood method to the Entry class that prompts the user to enter how he or she is feeeling and then
+// issues advice to the user on what to do to get better
