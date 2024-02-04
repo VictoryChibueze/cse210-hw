@@ -1,55 +1,73 @@
+using System.Text;
+
+
 class Scripture
 {
     private Reference _reference;
-    List<Word> _words = new List<Word>();
+    private List<Word> _words = new List<Word>();
+    private Random _random = new Random();
 
-    public Scripture(Reference Reference,String text)
+    public Scripture(Reference reference, string text)
     {
-        Reference = _reference;
-        text = _words.ToString(); 
-
+        _reference = reference;
+        _words = text.Split(' ').Select(word => new Word(word)).ToList();
     }
-    
-    public void HideRandomWords(int numberToHide)
-    { 
-        Random random = new Random();
-        int index1 = random.Next(_words.Count);
-        int index2 = random.Next(_words.Count);
 
+
+
+
+
+
+public void HideRandomWords(int numberToHide)
+{
+    HashSet<int> selectedIndices = new HashSet<int>();
+
+    for (int i = 0; i < numberToHide; i++)
+    {
+        int index;
         do
         {
-            _words[index1].Hide();
-            _words[index2].Hide();
-        }while(index1 !=index2);
+            index = _random.Next(_words.Count);
+        } while (selectedIndices.Contains(index));
 
-
+        selectedIndices.Add(index);
+        _words[index].Hide();
     }
+}
 
-    public void GetDisplayText()
+    
+    public string GetDisplayText()
+{
+    // Create a StringBuilder to efficiently build the display text
+    StringBuilder displayText = new StringBuilder();
+
+    displayText.AppendLine($"{_reference.GetDisplayText()}");
+
+    foreach (Word w in _words)
     {
-        Console.Clear();
-        Console.WriteLine($"{_reference.GetDisplayText()}\n");
-
-        foreach(Word w in _words)
-        {
-            Console.WriteLine(w.GetDisplayText()+ " ");
-        }
-        Console.WriteLine("\n");
-
-
+        displayText.Append(w.GetDisplayText() + " ");
     }
+
+    displayText.AppendLine("\n");
+
+    // Return the final display text as a string
+    return displayText.ToString();
+}
+
+
 
     public bool isCompletelyHidden()
     {
         foreach (Word word in _words)
         {
-            if(!word.isHidden())
+            if (!word.isHidden())
             {
                 return false;
             }
-            
         }
         return true;
     }
 
+    
 }
+

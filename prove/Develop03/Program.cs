@@ -7,16 +7,53 @@ class Program
 {
     static void Main(string[] args)
     {
-        String verse1 = "John 9: 31 :Now we know that God heareth not sinners: but if any man be a worshipper of God, and doeth his will, him he heareth.";
+        //read scriptures from a file
+        string filePath = "source.txt";
+        string[] lines = File.ReadAllLines(filePath);
+        Random random = new Random();
+        int randomIndex = random.Next(lines.Length);
+        string randomLine = lines[randomIndex];
 
-        Console.WriteLine("Press enter to continue or type 'quit' to finish");
-
-        Word word = new Word("");
-
-        Reference reference = new Reference("Peter",2,12);
-        Console.WriteLine(reference._book);
-
+        //parse random line into book, chapter, startVerse, endVerse, text by the 1st space and 2nd space
+        int firstSpaceIndex = randomLine.IndexOf(" ");
+        int secondSpaceIndex = randomLine.IndexOf(" ",firstSpaceIndex + 1);
+        string book = randomLine.Substring(0,firstSpaceIndex);
+        int chapter = int.Parse(randomLine.Substring(firstSpaceIndex +1 , 2));
+        int startVerse = int.Parse(randomLine.Substring(firstSpaceIndex + 4, 2));
         
+        string text = randomLine.Substring(secondSpaceIndex + 1);
+
+        Console.WriteLine(randomLine);
+        int counter = 0;
+
+        bool keepLooping = true;
+        
+        
+        do
+        {
+            Console.WriteLine("Press Enter to hide words, or type 'quit' to exit.");
+            string userInput = Console.ReadLine();
+            counter++;
+
+            if (userInput.ToLower() == "quit")
+            {
+                break;
+            }
+            // Assuming you have the Reference and Scripture classes implemented
+             Reference reference = new Reference(book, chapter, startVerse);
+            // Reference reference2 = new Reference(book, chapter, startVerse, endVerse);
+            Scripture scripture = new Scripture(reference, text);
+            scripture.HideRandomWords(counter);
+
+            // Capture the result of GetDisplayText and print it to the console
+            string displayText = scripture.GetDisplayText();
+            Console.WriteLine(displayText);
+            
+           if (scripture.isCompletelyHidden()) {keepLooping = false;};
+            
+            
+
+        } while (keepLooping);
 
 
 
@@ -24,7 +61,4 @@ class Program
 
         
     }
-}
-
-
-
+};
