@@ -56,7 +56,9 @@ class Program
         } while (keepLooping);
 
 
-
+// Exceeding requirement
+// The program loads scriptures from a file known as source.txt
+// Program randomly picks scriptures from the file
         
 
         
