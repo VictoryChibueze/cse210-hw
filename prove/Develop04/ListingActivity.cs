@@ -41,10 +41,6 @@ public class ListingActivity:Activity
 
     }
 
-    public void CountUserEntries()
-    {
-    }
-
     public void GetRandomPrompt()
     {
         string filePath = "Prompts.txt";

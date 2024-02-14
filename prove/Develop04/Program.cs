@@ -17,19 +17,16 @@ class Program
             case 1:
                 BreathingActivity breathing = new BreathingActivity();
                 breathing.Run();
-                
                 break;
 
             case 2:
-                      
+                ReflectingActivity reflecting = new ReflectingActivity(); 
+                reflecting.Run();   
                 break;
-
-
 
             case 3:
                 ListingActivity listing = new ListingActivity(0);
                 listing.Run();
-          
                 break;
 
             case 4:
@@ -42,12 +39,12 @@ class Program
        
         
         }
-                             // ReflectingActivity reflectingActivity = new ReflectingActivity("reflecting","reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.",30);
 
 
                 
     }
 }
-// "This activity will help you 'relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing."
-// "This activity will help you 'reflect on the good things in your life by having you list as many things as you can in a certain area."
-// "This activity will help you 'reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life."
+// Exceeding requirement 
+// Prompts are being loaded from a file Prompts.txt
+// Questions are being loaded from a file ReflectionQuestion.txt
+// Reflection prompts are being loaded from a file called ReflectionPrompts.txt
