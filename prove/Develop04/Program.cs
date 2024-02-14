@@ -21,14 +21,15 @@ class Program
                 break;
 
             case 2:
-                ListingActivity listing = new ListingActivity(10,"listing","reflect on the good things in your life by having you list as many things as you can in a certain area.",30);
-                listing.DisplayStartingMessage();
-                listing.DisplayEndingMessage();
+                      
                 break;
 
 
 
             case 3:
+                ListingActivity listing = new ListingActivity(0);
+                listing.Run();
+          
                 break;
 
             case 4:

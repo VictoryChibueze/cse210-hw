@@ -18,7 +18,7 @@ public class Activity
         Console.WriteLine("");
         Console.WriteLine($"This activity will help you {_description}");
         Console.WriteLine("");
-        Console.Write("How long, in second, would you like for your session?");
+        Console.Write("How long, in second, would you like for your session? ");
         string duration = Console.ReadLine();
         _duration = int.Parse(duration);
 
@@ -32,10 +32,10 @@ public class Activity
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Welldone!");
-        ShowSpinner(3);
+        ShowSpinner(5);
         Console.WriteLine("");
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name} activity");
-        ShowSpinner(3);
+        ShowSpinner(5);
 
     }
 
