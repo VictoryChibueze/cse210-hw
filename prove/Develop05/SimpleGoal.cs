@@ -2,7 +2,7 @@ public class SimpleGoal:Goal
 {
     private bool _isComplete;
 
-    public SimpleGoal():base(name,description,points)
+    public SimpleGoal(string name,string description,string points):base(name,description,points)
     {
 
     }
@@ -14,11 +14,13 @@ public class SimpleGoal:Goal
 
     public override bool isComplete()
     {
+        return true;
 
     }
 
     public override string GetStringRespresentation()
     {
+        return "";
 
     }
 }

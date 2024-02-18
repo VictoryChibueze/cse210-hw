@@ -12,23 +12,14 @@ public abstract class Goal
 
     }
 
-    public abstract void RecordEvent()
-    {
+    public abstract void RecordEvent();
 
-    }
-
-    public abstract bool isComplete()
-    {
-
-    }
+    public abstract bool isComplete();
 
     public string GetDetailsString()
     {
         return "";
     }
 
-    public abstract string GetStringRespresentation()
-    {
-        return "";
-    }
+    public abstract string GetStringRespresentation();
 }

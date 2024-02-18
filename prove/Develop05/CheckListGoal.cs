@@ -17,15 +17,18 @@ public class ChecklistGoal
 
     public bool isComplete()
     {
+        return true;
 
     }
     public string GetDetailsString()
     {
+        return "";
 
     }
     public string GetStringRespresentation()
     {
-        
+        return "";
+
     }
 
 

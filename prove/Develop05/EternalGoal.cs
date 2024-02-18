@@ -1,7 +1,7 @@
-public class EternalGoal
+public class EternalGoal:Goal
 {
 
-    public EternalGoal()
+    public EternalGoal(string name,string description,string points):base(name,description,points)
     {
 
     }
@@ -13,11 +13,13 @@ public class EternalGoal
 
     public override bool isComplete()
     {
+        return true;
 
     }
 
     public override string GetStringRespresentation()
     {
+        return "";
 
     }
 }
