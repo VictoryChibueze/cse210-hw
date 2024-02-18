@@ -7,18 +7,18 @@ public class SimpleGoal:Goal
 
     }
 
-    public void RecordEvent()
+    public override void RecordEvent()
     {
 
     }
 
-    public bool isComplete()
+    public override bool isComplete()
     {
 
     }
 
-    public string GetStringRespresentation()
+    public override string GetStringRespresentation()
     {
-        
+
     }
 }
