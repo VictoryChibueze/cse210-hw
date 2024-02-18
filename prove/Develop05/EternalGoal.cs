@@ -1,25 +1,26 @@
-public class EternalGoal:Goal
-{
+using System;
 
-    public EternalGoal(string name,string description,string points):base(name,description,points)
+public class EternalGoal : Goal
+{
+    public EternalGoal(string name, string description, int points) : base(name, description, points)
     {
 
     }
 
     public override void RecordEvent()
     {
-
+        Console.WriteLine($"{_shortName} Completed. {_points} points earned.");
     }
 
-    public override bool isComplete()
+    public override bool IsComplete()
     {
-        return true;
-
+        return false;
     }
 
-    public override string GetStringRespresentation()
+    public override string GetStringRepresentation()
     {
-        return "";
-
+        string data = $"eternal|{_checkbox}|{_shortName}|{_description}|{_points}";
+        return data;
     }
+
 }
