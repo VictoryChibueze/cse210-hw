@@ -24,7 +24,7 @@ class Program
                 if (response.ToLower() == "yes")
                 {
                     run = false;
-                    Console.WriteLine("\nThanks for indulging the collective");
+                    Console.WriteLine("\nThanks, have a wonderful day");
                 }
                 else if (response.ToLower() == "no")
                 {

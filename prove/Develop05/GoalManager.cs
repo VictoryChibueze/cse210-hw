@@ -104,17 +104,17 @@ public class GoalManager
         int bonus = 0;
 
         Console.WriteLine("The types of Goals are:\n1. Simple Goal\n2. Eternal Goal\n3. Checklist Goal ");
-        Console.Write(">");
+        Console.WriteLine("Which type of goal would you like to create? ");
         string type = Console.ReadLine();
 
         // Creates a goal depending on the type chosen and adds it to a list of goals
         if (type == "1")
         {
-            Console.Write("Give a short name for your goal.\n> ");
+            Console.Write("What is the name of your goal? ");
             name = Console.ReadLine();
-            Console.Write("Give a description for your goal.\n> ");
+            Console.Write("What is a short description of it? ");
             desc = Console.ReadLine();
-            Console.Write("Points upon conquering the goal.\n> ");
+            Console.Write("What is the amount of points associated with this goal? ");
             string point = Console.ReadLine();
 
             points = int.Parse(point);
@@ -126,11 +126,11 @@ public class GoalManager
         }
         else if (type == "2")
         {
-            Console.Write("Give a short name for your goal.\n> ");
+            Console.Write("What is the name of your goal? ");
             name = Console.ReadLine();
-            Console.Write("Give a description for your goal.\n> ");
+            Console.Write("What is a short description of it? ");
             desc = Console.ReadLine();
-            Console.Write("Points every time the goal is accomplished.\n> ");
+            Console.Write("What is the amount of points associated with this goal? ");
             string point = Console.ReadLine();
 
             points = int.Parse(point);
@@ -142,15 +142,15 @@ public class GoalManager
         }
         else if (type == "3")
         {
-            Console.Write("Give a short name for your goal.\n> ");
+            Console.Write("What is the name of your goal? ");
             name = Console.ReadLine();
-            Console.Write("Give a description for your goal.\n> ");
+            Console.Write("What is a short description of it? ");
             desc = Console.ReadLine();
-            Console.Write("Points for each completion.\n> ");
+            Console.Write("What is the amount of points associated with this goal? ");
             string point = Console.ReadLine();
-            Console.Write("Number of times to completely complete goal in its completeness.\n> ");
+            Console.Write("Number of times to completely complete goal in its completeness. ");
             string targt = Console.ReadLine();
-            Console.Write("Bonus points upon conquering the goal.\n> ");
+            Console.Write("What is the bonus associated with the goal? ");
             string bns = Console.ReadLine();
 
             points = int.Parse(point);
