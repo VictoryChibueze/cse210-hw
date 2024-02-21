@@ -3,7 +3,7 @@ public class Video
     public string _title;
     public string _author;
     public int _length;
-    public List<Comment>_comments()
+    public List<Comment> _comments;
 
 
     public Video(string title, string author, int length)
@@ -15,9 +15,10 @@ public class Video
 
     }
 
-    public void AddComment()
+    public void AddComment(string name,string text)
     {
-        Comment userComment = new Comment();
+        Comment userComment = new Comment(name,text );
+        _comments.Add(userComment);
         
     }
 
