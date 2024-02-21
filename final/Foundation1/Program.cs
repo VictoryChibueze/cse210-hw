@@ -28,12 +28,13 @@ class Program
             Console.WriteLine($"Author: {video._author}");
             Console.WriteLine($"Duration: {video._length}s");
             Console.WriteLine($"Number of Comment: {video.GetNumberComment()} comments");
-            Console.WriteLine($"");
-            
+          
             foreach (Comment textComment in video._comments)
             {
-                Console.WriteLine(textComment._text);
+                Console.WriteLine($"{textComment._name}: {textComment._text}");
             }
+            Console.WriteLine($"");
+            
             
         }
 
