@@ -24,12 +24,12 @@ public class Order
 
     public string PackingLabel()
     {
-        return string.Join("\n",_products.Select(product => $"{product.GetProductName()} (ID: {product.GetProductId()})"));
+        return string.Join("\n",_products.Select(product => $"Product name :{product.GetProductName()} (ID: {product.GetProductId()})"));
     }
 
     public string ShippingLabel()
     {
-        return $"{_customers.GetCustomerName()} {_customers.GetCustomerAddress()}";
+        return $"Customer's Name: {_customers.GetCustomerName()} \nCustomer's Address: {_customers.GetCustomerAddress()}";
     }
 
 

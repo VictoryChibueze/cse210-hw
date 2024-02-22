@@ -38,7 +38,7 @@ public class Address
 
     public string DisplayAddress()
     {
-        return $"\n{GetStreetAddress()} {GetCity()}, {GetState()}, {GetCountry()}";
+        return $"{GetStreetAddress()} {GetCity()}, {GetState()}, {GetCountry()}";
     }
 
 }
