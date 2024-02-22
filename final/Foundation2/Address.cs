@@ -13,9 +13,9 @@ public class Address
         _country = country;
     }
 
-    public bool IsAmerica()
+    public bool IsAmerica(string country)
     {
-        if (string _country = "USA")
+        if (country = "USA")
         {
             return true;
         }else
