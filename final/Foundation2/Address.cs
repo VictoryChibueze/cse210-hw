@@ -12,6 +12,24 @@ public class Address
         _state = state;
         _country = country;
     }
+    public string GetStreetAddress()
+    {
+        return $"{_streetAddress}";
+    }
+
+    public string GetCity()
+    {
+        return $"{_city}";
+    }
+
+    public string GetState()
+    {
+        return $"{_state}";
+    }
+    public string GetCountry()
+    {
+        return $"{_country}";
+    }
 
     public bool IsAmerica()
     {
@@ -20,7 +38,7 @@ public class Address
 
     public string DisplayAddress()
     {
-        return $"{_streetAddress}{_city},{_state}, {_country}";
+        return $"\n{GetStreetAddress()} {GetCity()}, {GetState()}, {GetCountry()}";
     }
 
 }

@@ -8,6 +8,7 @@ public class Product
 
     public Product(string name,string productId, float price,int quantity)
     {
+        _name = name;
         _productId = productId;
         _price = price;
         _quantity = quantity;

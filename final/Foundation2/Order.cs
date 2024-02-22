@@ -1,6 +1,6 @@
 public class Order
 {
-    private List <Product> _products;
+    private List <Product> _products = new List <Product>();
     private Customer _customers;
 
     public Order(Customer customers)
@@ -24,7 +24,7 @@ public class Order
 
     public string PackingLabel()
     {
-        return string.Join(" ",_products.Select(product => $"{product.GetProductName()} (ID: {product.GetProductId()})"));
+        return string.Join("\n",_products.Select(product => $"{product.GetProductName()} (ID: {product.GetProductId()})"));
     }
 
     public string ShippingLabel()
