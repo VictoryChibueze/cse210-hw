@@ -1,11 +1,12 @@
 public class Product
 {
+    private string _name;
     private string _productId;
     private float _price;
     private int _quantity;
 
 
-    public Product(string productId, float price,int quantity)
+    public Product(string name,string productId, float price,int quantity)
     {
         _productId = productId;
         _price = price;
@@ -13,10 +14,19 @@ public class Product
 
     }
 
-    public float TotalCost(float price,int quantity)
+    public float TotalCost()
     {
-        return $"{price * quantity}";
+        return _price * _quantity;
 
     }
 
+    public string GetProductName()
+    {
+        return $"{_name}";
+    }
+
+    public string GetProductId()
+    {
+        return $"{_productId}";
+    }
 }

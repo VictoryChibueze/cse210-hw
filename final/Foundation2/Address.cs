@@ -13,15 +13,9 @@ public class Address
         _country = country;
     }
 
-    public bool IsAmerica(string country)
+    public bool IsAmerica()
     {
-        if (country = "USA")
-        {
-            return true;
-        }else
-        {
-            return false;
-        }
+        return _country.ToLower() == "usa";
     }
 
     public string DisplayAddress()
