@@ -12,13 +12,14 @@ public class Event
         _description = description;
         _date = date;
         _address = address;
-        date.
+        
+        
 
     }
 
     public string GetStandardDetails()
     {
-        return $"Title: {_title}\n Description: {_description}\n Date: {_date.ToShortDateString()}\n Time: {_date.ToShortTimeString()}\nAddress:{_address}"
+        return $"Title: {_title}\n Description: {_description}\n Date: {_date.ToShortDateString()}\n Time: {_date.ToShortTimeString()}\nAddress:{_address}";
 
     }
 
