@@ -9,6 +9,7 @@ class Program
             "An uplifting speech to motivate and inspire",
             new DateTime(2024, 3, 15, 18, 30, 0),
             "123 Main St",
+            "Lectures",
             "John Doe",
             100
         );
@@ -18,14 +19,16 @@ class Program
             "A social gathering for networking and connections",
             new DateTime(2024, 3, 20, 19, 0, 0),
             "456 Oak St",
-            "Liennetworks@gmail.com"  
+            "Reception", 
+            "Liennetworks@gmail.com" 
         );
 
         OutdoorGathering outdoorGathering = new OutdoorGathering(
             "Community Picnic",
             "A fun picnic for the local community",
             new DateTime(2024, 4, 5, 12, 0, 0),
-            "City Park"
+            "City Park",
+            "Outgathering"
         );
         DisplayEventMarketing(lecture);
         DisplayEventMarketing(reception);

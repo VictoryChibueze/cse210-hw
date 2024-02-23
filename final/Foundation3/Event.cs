@@ -4,22 +4,24 @@ public class Event
     private string _description;
     private DateTime _date;
     private string _address;
+    private string _eventType;
 
 
-    public Event(string title,string description,DateTime date,string address)
+    public Event(string title,string description,DateTime date,string address,string eventType)
     {
         _title = title;
         _description = description;
         _date = date;
         _address = address;
+        _eventType = eventType;
         
-        
+
 
     }
 
     public string GetStandardDetails()
     {
-        return $"Title: {_title}\n Description: {_description}\n Date: {_date.ToShortDateString()}\n Time: {_date.ToShortTimeString()}\nAddress:{_address}";
+        return $"Title: {_title}\nDescription: {_description}\nDate: {_date.ToShortDateString()}\nTime: {_date.ToShortTimeString()}\nAddress:{_address}";
 
     }
 
@@ -30,7 +32,7 @@ public class Event
     }
     public string ShortDescription()
     {
-        return $"Event Type: Generic Event \n Title: {_title} \n Date: {_date.ToShortDateString()}";
+        return $"Event Type: {_eventType} \n Title: {_title} \n Date: {_date.ToShortDateString()}";
     }
 
 }
